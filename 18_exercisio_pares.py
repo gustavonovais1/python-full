@@ -1,5 +1,3 @@
-from re import I
-
 
 numero = int(input('Digite um numero: '))
 

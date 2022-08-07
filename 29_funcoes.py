@@ -1,7 +1,4 @@
 # Função comun
-from re import X
-from numpy import arange
-
 
 def minha_funcao():
     soma = 0
