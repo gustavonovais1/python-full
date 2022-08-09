@@ -1,14 +1,39 @@
+# __init__ sempre sera executado (Método construtor)
+# self é um atributo de instancia
 class Pessoas:
-    def __init__(self, nome, idade, cpf):
+
+    posui_olho = True
+    posui_boca = True
+    raca = "ser humano"
+
+    def __init__(self, nome, idade):
         self.nome = nome
         self.idade = idade
-        self.cpf = cpf
+
+    def retorna_nome(self):
+        return self.nome
 
     def logar_sistema(self):
-        print(f"{self.nome} está logando no sistema")
+        "Metodo de instancia"
+        print(f"{self.retorna_nome()} está logando no sistema")
+    
+    @classmethod
+    def andar(cls):
+        "Metodo de classe"
+        cls.posui_boca = False
 
-p1 = Pessoas('Gustavo', 18, "123465764")
-p2 = Pessoas('Matheus', 25, "121454578")
 
-print(p1.nome)
-p2.logar_sistema()
+# instancia da classe pessoas
+p1 = Pessoas("Gustavo", 18)
+
+# metodo de instancia
+# print(p1.posui_olho)
+# p1.andar()
+
+# metodo de classe
+print(Pessoas.posui_boca)
+Pessoas.andar()
+print(Pessoas.posui_boca)
+
+# p1.posui_olho = False
+# Pessoas.posui_olho = False
