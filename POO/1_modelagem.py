@@ -1,5 +1,8 @@
 # __init__ sempre sera executado (Método construtor)
 # self é um atributo de instancia
+import re
+
+
 class Pessoas:
 
     posui_olho = True
@@ -22,6 +25,11 @@ class Pessoas:
         "Metodo de classe"
         cls.posui_boca = False
 
+    @staticmethod
+    def e_adulto(idade):
+        if idade > 18:
+            return True
+        return False
 
 # instancia da classe pessoas
 p1 = Pessoas("Gustavo", 18)
@@ -35,5 +43,4 @@ print(Pessoas.posui_boca)
 Pessoas.andar()
 print(Pessoas.posui_boca)
 
-# p1.posui_olho = False
-# Pessoas.posui_olho = False
+print(Pessoas.e_adulto(10))
