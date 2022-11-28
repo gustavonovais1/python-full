@@ -31,10 +31,10 @@ def removeTabela(nomeTabela):
     except Exception as a:
         print(f'Ocorreu um erro de {a} ')
 
-def insereTabela(nome):
+def insereTabela(categoria):
     try:
         with conection.cursor() as cursor:
-            cursor.execute(f"INSERT INTO teste values ('{nome}')")
+            cursor.execute(f"INSERT INTO categoria values ('{categoria}')")
 
         print('Valor inserido com sucesso!')
 
@@ -59,4 +59,8 @@ def removeColunaTabela():
     except Exception as a:
         print(f'Ocorreu um erro de {a}')
 
+
+insereTabela('tessste')
+
 conection.close()   
+

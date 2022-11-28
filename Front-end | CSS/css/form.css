@@ -1,0 +1,31 @@
+#btn{
+    display: block;
+    text-decoration: none;
+    margin-top: 15px;
+    color: white;
+    border: 1px solid black;
+    width: 80px;
+    padding: 5px;
+    background-color: rgb(127, 127, 218);
+    border-radius: 10px;
+    transition: 0.5s;
+    box-shadow: 1px 1px 1px black;
+}
+
+
+#btn:hover{
+    background-color: blue;
+}
+
+#inp:focus{
+    border-bottom: 2px solid rgb(91, 245, 91);
+}
+
+#inp{
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid rgb(36, 69, 179);
+    background-color: rgba(52, 219, 191, 0.5);
+    outline: none;
+    border-radius: 10px;
+}
