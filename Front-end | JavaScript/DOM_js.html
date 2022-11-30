@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Olá, mundo!</title>
+
+    <script>
+
+        document.getElementById('topo')
+                    /*
+                    COMANDOS FEITOS NO TERMINAL DO NAVEGADOR
+        
+                    div1 = document.getElementById('topo')
+        
+                    div1.style.background = 'red'
+        
+                    div1.style.display = 'none'
+        
+                    div1.style.display = 'block' 
+                    
+                    div1.innerHTML = "<h1>Gustavo</h1>"
+        
+                    valor = div1.innerHTML
+        
+                    valor
+        
+                    divs = document.getElementsByClassName('container')
+        
+                    divs[0]
+        
+                    divs[1].style.background = 'red'
+
+                    document.getElementById('n1')
+
+                    document.getElementById('n1').value
+        
+                    */
+                    function soma(){
+                        var n1 = document.getElementById('n1').value;
+                        var n2 = document.getElementById('n2').value;
+                        var soma = parseInt(n1) + parseInt(n2);
+                        var mostrarResultado = document.getElementById('resultado')
+                        if(soma >= 10){
+                            mostrarResultado.style.color = 'green';
+                        }else{
+                            mostrarResultado.style.color = 'red';
+                        }
+                        mostrarResultado.innerHTML = 'A soma entre ' + n1 + ' e ' + n2 + ' é: ' + soma;
+                        console.log(soma)
+                    }
+
+                    function tela(){
+                        if( window.innerWidth < 500){
+                        document.getElementById('cont').style.background = 'red';
+                        }else{
+                            document.getElementById('cont').style.background = 'transparent';
+                        }
+                    }
+                </script>
+
+    </head>
+    <body onresize="tela()">
+    
+    <div  style="text-align: center;" id='cont'>
+        <br>
+        <label>Numero 1:</label>
+        <br>
+        <input type="number" id="n1">
+        <br>
+        <br>
+        <label>Numero 2:</label>
+        <br>
+        <input type="number" id="n2">
+        <br>
+        <p id="resultado"></p>
+        <button onclick="soma()" class="btn btn-success">Enviar</button>
+        <br>
+        <br>
+    </div>
+
+    <div class="container" id="topo" style="width: 200px; height: 200px; border: 1px solid black;">
+    </div>
+
+    <div class="container" style="width: 200px; height: 200px; border: 1px solid black;">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

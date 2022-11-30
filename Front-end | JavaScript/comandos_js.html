@@ -1,0 +1,124 @@
+<html>
+
+    <header>
+        <script>
+        // Atribuindo valor para a variavel e exibindo no terminal do navegador
+        
+        var nome = 'Gustavo';
+        console.log(nome)
+        
+        // Utilizando operadores lógicos em js 
+        
+        var aula = 5 == 5 && 6 < 7 || 8 < 4;
+
+        // Estrutura if em js  
+
+        if(5 == 5){
+            console.log("if")
+        }
+        else if(5 != 7){
+            console.log("else if")
+        }
+        else{
+            console.log("else")
+        } 
+
+        // Convertendo dados 
+
+        var num = parseInt('25')
+        var num2 = parseFloat('10.11')
+        var num3 = 5
+        var num3 = num3.toString()
+        console.log(num3) 
+        
+        // Operador ternario 
+
+        5 != 5 || 5 == 4 ? console.log("Bloco 1") : console.log('Bloco 2')
+        
+        // Switch case 
+
+        var nun = 4;
+        switch(nun){
+            case 1:
+                console.log('1')
+                break
+            
+            case 2:
+                console.log('2')
+                break
+            
+            case 3:
+                console.log("3")
+            
+            default:
+                console.log('default')
+        } 
+
+        // while em js
+
+        var num = 1
+        while(num < 20){
+
+            console.log(num)
+            
+            num++;
+        } 
+
+        // DO WHILE
+
+        var num = 1
+        do{
+            console.log(1)
+        }while(num == 0){
+            console.log(2)
+        } 
+        
+        // for em js
+
+        for(var num = 0; num < 10; num ++){
+            console.log(num)
+        }
+
+        // Declaração de Arrays ou listas e seus metodos em js 
+
+        var nomes = Array('Linda');
+        var nome = ['Matheus', 'Gustavo']
+
+        nomes[1] = 'Gustavo'
+        nomes[2] = 'Pedro'
+        nomes[3] = 'Kamilly'
+
+        nome['nome3'] = 'Kamilly'
+
+        nomes.push('Lucas')
+        nomes.pop()
+        console.log(nomes, nome.sort())         
+        console.log(nomes.indexOf('Gustavo')) 
+
+        // Funçôes em js
+
+        function minha_funcao(calbackSuccess, calbackError){
+            if(false){
+                calbackSuccess()
+            }
+            else{
+                calbackError()
+            }
+        }
+
+        function calbackSuccess(){
+            console.log('Sucesso')
+        }
+        function calbackError(){
+            console.log('Erro')
+        }
+        minha_funcao(calbackSuccess, calbackError) 
+
+        </script>
+    </header>
+
+    <body>
+        <h3>Javascript</h3>
+    </body>
+
+</html>

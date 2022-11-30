@@ -1,0 +1,52 @@
+<html>
+
+    <header>
+        <script>
+
+            // Eventos de mouse
+            function mouse(){
+                alert('Clicou!')
+            }
+
+            function mouse2(){
+                alert('Entrou com o cursor no quadrado vermelho')
+            }
+
+            // Eventos de teclado 
+            function teclado(){
+                console.log('Tecla acionada')
+            }
+
+            // Evento de janela
+            function janela(){
+                console.log('Tamanho da janela auterado')
+            }
+
+            function janela2(){
+                console.log('Scroll acionado')
+            }
+            
+            // // Eventos de formulário
+
+            function formss(){
+                console.log('Foco no formulario')
+            }
+
+            function formss2(){
+                console.log('Tirou o foco do formulario')
+            }
+
+
+        </script>
+    </header>
+
+    <body onkeydown="teclado()" onresize="janela()" onscroll="janela2()">
+
+        <input onfocus="formss()" onblur="formss2()" type="text">
+
+        <div onclick="mouse()" onmouseenter="mouse2()"  style="background-color: red; width: 80px; height: 8000px; cursor: pointer;" class="container">
+
+        </div>
+    </body>
+
+</html>
