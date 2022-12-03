@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+        <title>Pokedex</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div id="linha" class="row">
+
+            </div>
+            <div id="btn"  class="row">
+
+            </div>
+        </div>
+
+        <script>
+            
+            for(var i = 1; i < 200; i++ ){
+                
+                $.ajax({
+                    url: "https://pokeapi.co/api/v2/pokemon/"+i,
+                    method: "get",
+                    async: true,
+                    success: function(resposta){
+                        var linha = document.getElementById('linha')
+                        conteudo = '<div class="card" style="width: 18rem;">\
+                                        <img class="card-img-top" src="'+ resposta['sprites']['other']['dream_world']['front_default'] +'" alt="Imagem de capa do card">\
+                                        <div class="card-body">\
+                                            <h5 class="card-title">'+ resposta['forms'][0]['name'] +'</h5>\
+                                            <p>\
+                                                <p>\
+                                                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample'+ i +'"\
+                                                role="button" aria-expanded="false" aria-controls="collapseExample">\
+                                                Ver habilidades\
+                                                </a>\
+                                            </p>\
+                                            <div class="collapse" id="collapseExample'+ i +'">\
+                                                <div class="card card-body">\
+                                                    '+ resposta['abilities'][0]['ability']['name'] +'\n '+ resposta['abilities'][1]['ability']['name'] +'\
+                                                </div>\
+                                            </div>\
+                                        </div>\
+                                        </div>'
+                        
+                        linha.innerHTML += conteudo
+                        
+
+                        console.log(resposta['sprites']['other']['dream_world']['front_default'])
+                        console.log(resposta['forms'][0]['name'])
+                        console.log(resposta['abilities'][0]['ability']['name'])
+                        console.log(resposta['abilities'][1]['ability']['name'])
+                    },
+                    })
+                }
+
+        </script>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<button></button>
+    </body>
+
+
+
+</html>

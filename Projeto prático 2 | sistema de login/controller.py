@@ -51,8 +51,6 @@ class ControllerCadastro():
         except:
             return 6
 
-#ControllerCadastro.cadastrar('gustavo', 'gustavonovais401@gmail.com', 'senha123')
-
 class ControllerLogin():
     @classmethod
     def login(cls, email, senha):

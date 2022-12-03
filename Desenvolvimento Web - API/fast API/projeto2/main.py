@@ -46,4 +46,3 @@ def login(usuario: str, senha: str):
             session.commit()
             break
     return token
-
