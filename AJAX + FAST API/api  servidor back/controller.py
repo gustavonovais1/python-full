@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model import Base, Pessoa, Tokens
+from model import Base, Pessoa, Tokens, Compra
 from secrets import token_hex
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
@@ -77,6 +77,32 @@ def login(user: str, senha: str):
 
     elif len(usuario) == 0:
         return {'erro': 5}
+
+@app.post('/dados')
+def dados(nome: str, user: str, cidade: str, estado: str, cep: str):
+
+    if len(nome) <= 50 and len(user) <= 50:
+        if len(cidade) <= 60 and len(cep) <= 10:
+            if len(estado) == 2:
+                nova_compra = Compra(nome=nome,
+                                    usuario=user,
+                                    cidade=cidade,
+                                    estado=estado,
+                                    cep=cep)
+
+                Session = conectaBanco()
+                Session.add(nova_compra)
+                Session.commit()
+
+                return {'erro': 9}
+            else:
+                return {'erro': 6} # Informe apenas a sigla do estado
+        else:
+            return {'erro': 7} # Cidade ou cep maior que o permitido
+    else:
+        return {'erro': 8} # Nome ou usuário maior que o permitido
+
+
 
 if __name__ == "__main__":
     uvicorn.run('controller:app', port=5000, reload=True, access_log=False)
