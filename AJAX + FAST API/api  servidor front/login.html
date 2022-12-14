@@ -30,7 +30,7 @@
                     <p>senha</p>
                     <input type="password" id="senha" class="form-control" placeholder="senha">
                     <br>
-                    <button onclick="logar()" href="login.html" type="button" class="btn btn-primary">Login</button>
+                    <button onclick="logar()" href="http://127.0.0.1:5003/" type="button" class="btn btn-primary">Login</button>
                     <a href="http://127.0.0.1:5001/" type="button" class="btn btn-outline-success">Cadastrar</a>
                 </div>
                 <div class="col-sm">
@@ -48,15 +48,14 @@
             urle = "http://127.0.0.1:5000/login?user=" + usuario + "&senha=" + senha
     
             $.ajax({
-                url: urle,
+                url: urle,  
                 method: 'post',
                 success: function(resposta){
                     console.log(resposta)
                     var conteudo = document.getElementById('resposta')
 
                     if(resposta['erro'] == 4){
-                        conteudo.innerHTML = 'Bem vindo '+ usuario +'' 
-                        conteudo.style.color = 'rgba(94, 196, 129, 1)'
+                        window.location.href = 'http://127.0.0.1:5003/'
                     }else if(resposta['erro'] == 5){
                         conteudo.innerHTML = 'Usuário ou senha incorretos!' 
                         conteudo.style.color = 'rgba(189, 87, 86, 1)'
@@ -65,7 +64,5 @@
             })
             }
         </script>
-
     </body>
-
 </html>

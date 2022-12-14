@@ -22,6 +22,7 @@
                         <p class="alert alert-light" role="alert"id="resposta"></p>
 
                         <h1>Cadastre-se</h1>
+
                     </div>
                     <hr>
                     <p>Usuário</p>
@@ -64,6 +65,7 @@
                     }else if(resposta['erro'] == 1){
                         conteudo.innerHTML = 'Senha com menos de 6 digitos' 
                         conteudo.style.color = 'rgba(182, 189, 86, 1)'
+                        console.log(resposta)
                     }else if(resposta['erro'] == 2){
                         conteudo.innerHTML = 'Usuario ja cadastrado no sistema' 
                         conteudo.style.color = 'rgba(189, 87, 86, 1)'
